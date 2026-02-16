@@ -1,0 +1,7 @@
+{
+  "name": "Corrector Expressió escrita",
+  "description": "Herramienta pedagógica para la evaluación competencial de textos de alumnos basada en rúbricas oficiales de Ciclo Inicial, Medio y Superior.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
