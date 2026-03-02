@@ -8,7 +8,7 @@ export interface FileData {
   mimeType: string;
 }
 
-const ai = new GoogleGenAI({ apiKey: "AIzaSyBFE-b5gBL3dCWX3Nw-mVHG4368ynZ6pVA" });
+export const evaluateText = async (text: string, cycle: Cycle, file?: FileData) => {
   const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   const parts: any[] = [];

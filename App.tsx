@@ -47,7 +47,7 @@ const App: React.FC = () => {
       }
     } catch (err) {
       console.error("Error accessing camera:", err);
-      setError("No s'ha pogut accedir a la càmera. Revisa els permisos.");
+      setError("No s'ha pogut accedir a la càmera. Si us plau, revisa els permisos del navegador.");
     }
   };
 
@@ -91,7 +91,7 @@ const App: React.FC = () => {
       setResult(data);
     } catch (err) {
       console.error(err);
-      setError('S\'ha produït un error en analitzar el contingut. Si us plau, torna-ho a provar.');
+      setError('S\'ha produït un error en analitzar el contingut. Si us plau, torna-ho a provar d\'aquí a uns moments.');
     } finally {
       setIsLoading(false);
     }
@@ -119,10 +119,10 @@ const App: React.FC = () => {
           </svg>
         </div>
         <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight sm:text-5xl mb-4">
-          Corrector Estratègic
+          Corrector d'Expressió Escrita
         </h1>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-          Eina d'assessorament pedagògic per a l'avaluació competencial de l'expressió escrita. Importa PDF, fotos de quaderns o escriu directament.
+          Eina d'assessorament pedagògic per a l'avaluació competencial de l'expressió escrita. Importa PDF, fotos de quaderns o escriu directament el text.
         </p>
       </header>
 
@@ -157,7 +157,7 @@ const App: React.FC = () => {
 
           <div>
             <label className="block text-sm font-bold text-slate-700 mb-3 uppercase tracking-wider flex justify-between items-center">
-              2. Contingut de l'alumne/a
+              2. Contingut de l'alumne o alumna
               <span className="text-[10px] font-normal normal-case text-slate-400">Pots escriure o pujar un fitxer</span>
             </label>
             
@@ -165,7 +165,7 @@ const App: React.FC = () => {
               <textarea
                 value={text}
                 onChange={(e) => setText(e.target.value)}
-                placeholder="Escriu aquí el text o puja una foto del treball..."
+                placeholder="Escriu aquí el text o adjunta una foto del treball..."
                 className="w-full min-h-[200px] p-6 rounded-2xl border-2 border-slate-100 bg-slate-50 focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/10 transition-all resize-none text-slate-800 leading-relaxed"
               />
 
@@ -197,7 +197,7 @@ const App: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  Fes una foto
+                  Fer una foto
                 </button>
                 
                 {selectedFile && (
@@ -205,7 +205,7 @@ const App: React.FC = () => {
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
                     </svg>
-                    <span className="max-w-[150px] truncate">Fitxer preparat</span>
+                    <span className="max-w-[150px] truncate">Document preparat</span>
                     <button type="button" onClick={removeFile} className="text-indigo-400 hover:text-indigo-600 ml-1">
                       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
@@ -224,10 +224,10 @@ const App: React.FC = () => {
               disabled={!cycle || (!text.trim() && !selectedFile)}
               className="w-full md:w-auto min-w-[200px]"
             >
-              Començar avaluació
+              Començar l'avaluació
             </Button>
             <p className="text-xs text-slate-400 italic">
-              L'IA analitzarà el text o el fitxer segons la rúbrica oficial. Admet captures i PDF.
+              L'IA analitzarà el contingut basant-se en les rúbriques oficials. S'accepten captures d'imatge i fitxers PDF.
             </p>
           </div>
 
@@ -276,10 +276,10 @@ const App: React.FC = () => {
             </div>
             <div className="p-6 flex justify-center gap-4">
               <Button onClick={capturePhoto} className="min-w-[150px]">
-                Captura
+                Capturar
               </Button>
               <Button variant="outline" onClick={stopCamera}>
-                Cancel·la
+                Cancel·lar
               </Button>
             </div>
             <canvas ref={canvasRef} className="hidden" />
